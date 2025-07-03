@@ -1,4 +1,4 @@
-package com.likelion.springpractice.global.exception.model;
+package com.sku.collaboration.project.global.exception.model;
 
 import org.springframework.http.HttpStatus;
 

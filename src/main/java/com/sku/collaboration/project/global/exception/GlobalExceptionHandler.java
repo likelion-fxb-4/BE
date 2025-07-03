@@ -1,7 +1,7 @@
-package com.likelion.springpractice.global.exception;
+package com.sku.collaboration.project.global.exception;
 
-import com.likelion.springpractice.global.exception.model.BaseErrorCode;
-import com.likelion.springpractice.global.response.BaseResponse;
+import com.sku.collaboration.project.global.exception.model.BaseErrorCode;
+import com.sku.collaboration.project.global.response.BaseResponse;
 import java.sql.SQLException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

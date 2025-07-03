@@ -1,10 +1,10 @@
-package com.likelion.springpractice.domain.user.entity;
+package com.sku.collaboration.project.domain.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import com.likelion.springpractice.domain.user.enums.Language;
-import com.likelion.springpractice.domain.user.enums.Role;
-import com.likelion.springpractice.global.common.BaseTimeEntity;
+import com.sku.collaboration.project.domain.user.enums.Language;
+import com.sku.collaboration.project.domain.user.enums.Role;
+import com.sku.collaboration.project.global.common.BaseTimeEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

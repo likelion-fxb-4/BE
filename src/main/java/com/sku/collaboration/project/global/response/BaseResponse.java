@@ -1,4 +1,4 @@
-package com.likelion.springpractice.global.response;
+package com.sku.collaboration.project.global.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

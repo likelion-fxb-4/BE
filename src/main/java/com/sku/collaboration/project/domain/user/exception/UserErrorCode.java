@@ -1,6 +1,6 @@
-package com.likelion.springpractice.domain.user.exception;
+package com.sku.collaboration.project.domain.user.exception;
 
-import com.likelion.springpractice.global.exception.model.BaseErrorCode;
+import com.sku.collaboration.project.global.exception.model.BaseErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

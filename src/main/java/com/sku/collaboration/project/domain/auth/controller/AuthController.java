@@ -1,12 +1,12 @@
-package com.likelion.springpractice.domain.auth.controller;
+package com.sku.collaboration.project.domain.auth.controller;
 
-import com.likelion.springpractice.domain.auth.dto.request.LoginRequest;
-import com.likelion.springpractice.domain.auth.dto.response.LoginResponse;
-import com.likelion.springpractice.domain.auth.service.AuthService;
-import com.likelion.springpractice.domain.user.exception.UserErrorCode;
-import com.likelion.springpractice.domain.user.repository.UserRepository;
-import com.likelion.springpractice.global.exception.CustomException;
-import com.likelion.springpractice.global.response.BaseResponse;
+import com.sku.collaboration.project.domain.auth.dto.request.LoginRequest;
+import com.sku.collaboration.project.domain.auth.dto.response.LoginResponse;
+import com.sku.collaboration.project.domain.auth.service.AuthService;
+import com.sku.collaboration.project.domain.user.exception.UserErrorCode;
+import com.sku.collaboration.project.domain.user.repository.UserRepository;
+import com.sku.collaboration.project.global.exception.CustomException;
+import com.sku.collaboration.project.global.response.BaseResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.Cookie;

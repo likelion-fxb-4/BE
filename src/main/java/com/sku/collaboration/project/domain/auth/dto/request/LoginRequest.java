@@ -1,4 +1,4 @@
-package com.likelion.springpractice.domain.auth.dto.request;
+package com.sku.collaboration.project.domain.auth.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;

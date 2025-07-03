@@ -1,4 +1,4 @@
-package com.likelion.springpractice.global.common;
+package com.sku.collaboration.project.global.common;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

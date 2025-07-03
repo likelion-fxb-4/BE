@@ -1,4 +1,4 @@
-package com.likelion.springpractice.domain.user.dto.request;
+package com.sku.collaboration.project.domain.user.dto.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;

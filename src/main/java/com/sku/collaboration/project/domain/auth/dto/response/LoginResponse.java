@@ -1,6 +1,6 @@
-package com.likelion.springpractice.domain.auth.dto.response;
+package com.sku.collaboration.project.domain.auth.dto.response;
 
-import com.likelion.springpractice.domain.user.enums.Role;
+import com.sku.collaboration.project.domain.user.enums.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;

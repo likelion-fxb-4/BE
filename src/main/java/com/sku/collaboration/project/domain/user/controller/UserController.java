@@ -1,13 +1,13 @@
-package com.likelion.springpractice.domain.user.controller;
+package com.sku.collaboration.project.domain.user.controller;
 
-import com.likelion.springpractice.domain.user.dto.request.LanguageUpdateRequest;
-import com.likelion.springpractice.domain.user.dto.request.NameUpdateRequest;
-import com.likelion.springpractice.domain.user.dto.request.PasswordUpdateRequest;
-import com.likelion.springpractice.domain.user.dto.request.SignUpRequest;
-import com.likelion.springpractice.domain.user.dto.response.SignUpResponse;
-import com.likelion.springpractice.domain.user.service.UserService;
-import com.likelion.springpractice.global.response.BaseResponse;
-import com.likelion.springpractice.global.security.CustomUserDetails;
+import com.sku.collaboration.project.domain.user.dto.request.LanguageUpdateRequest;
+import com.sku.collaboration.project.domain.user.dto.request.NameUpdateRequest;
+import com.sku.collaboration.project.domain.user.dto.request.PasswordUpdateRequest;
+import com.sku.collaboration.project.domain.user.dto.request.SignUpRequest;
+import com.sku.collaboration.project.domain.user.dto.response.SignUpResponse;
+import com.sku.collaboration.project.domain.user.service.UserService;
+import com.sku.collaboration.project.global.response.BaseResponse;
+import com.sku.collaboration.project.global.security.CustomUserDetails;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

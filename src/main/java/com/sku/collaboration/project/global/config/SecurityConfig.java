@@ -1,6 +1,6 @@
-package com.likelion.springpractice.global.config;
+package com.sku.collaboration.project.global.config;
 
-import com.likelion.springpractice.global.security.JwtAuthenticationFilter;
+import com.sku.collaboration.project.global.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

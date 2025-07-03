@@ -1,7 +1,7 @@
-package com.likelion.springpractice.global.security;
+package com.sku.collaboration.project.global.security;
 
-import com.likelion.springpractice.domain.user.entity.User;
-import com.likelion.springpractice.domain.user.repository.UserRepository;
+import com.sku.collaboration.project.domain.user.entity.User;
+import com.sku.collaboration.project.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

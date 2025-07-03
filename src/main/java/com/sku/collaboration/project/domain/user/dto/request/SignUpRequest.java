@@ -1,6 +1,6 @@
-package com.likelion.springpractice.domain.user.dto.request;
+package com.sku.collaboration.project.domain.user.dto.request;
 
-import com.likelion.springpractice.domain.user.enums.Language;
+import com.sku.collaboration.project.domain.user.enums.Language;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

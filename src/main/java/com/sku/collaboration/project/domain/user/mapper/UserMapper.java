@@ -1,7 +1,7 @@
-package com.likelion.springpractice.domain.user.mapper;
+package com.sku.collaboration.project.domain.user.mapper;
 
-import com.likelion.springpractice.domain.user.dto.response.SignUpResponse;
-import com.likelion.springpractice.domain.user.entity.User;
+import com.sku.collaboration.project.domain.user.dto.response.SignUpResponse;
+import com.sku.collaboration.project.domain.user.entity.User;
 import org.springframework.stereotype.Component;
 
 @Component

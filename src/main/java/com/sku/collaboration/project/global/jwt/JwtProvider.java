@@ -1,7 +1,7 @@
-package com.likelion.springpractice.global.jwt;
+package com.sku.collaboration.project.global.jwt;
 
-import com.likelion.springpractice.domain.auth.exception.AuthErrorCode;
-import com.likelion.springpractice.global.exception.CustomException;
+import com.sku.collaboration.project.domain.auth.exception.AuthErrorCode;
+import com.sku.collaboration.project.global.exception.CustomException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

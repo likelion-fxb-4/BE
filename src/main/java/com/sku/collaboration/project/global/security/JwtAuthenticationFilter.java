@@ -1,6 +1,6 @@
-package com.likelion.springpractice.global.security;
+package com.sku.collaboration.project.global.security;
 
-import com.likelion.springpractice.global.jwt.JwtProvider;
+import com.sku.collaboration.project.global.jwt.JwtProvider;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

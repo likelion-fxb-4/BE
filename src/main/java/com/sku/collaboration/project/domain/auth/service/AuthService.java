@@ -1,13 +1,13 @@
-package com.likelion.springpractice.domain.auth.service;
+package com.sku.collaboration.project.domain.auth.service;
 
-import com.likelion.springpractice.domain.auth.dto.request.LoginRequest;
-import com.likelion.springpractice.domain.auth.dto.response.LoginResponse;
-import com.likelion.springpractice.domain.auth.mapper.AuthMapper;
-import com.likelion.springpractice.domain.user.entity.User;
-import com.likelion.springpractice.domain.user.exception.UserErrorCode;
-import com.likelion.springpractice.domain.user.repository.UserRepository;
-import com.likelion.springpractice.global.exception.CustomException;
-import com.likelion.springpractice.global.jwt.JwtProvider;
+import com.sku.collaboration.project.domain.auth.dto.request.LoginRequest;
+import com.sku.collaboration.project.domain.auth.dto.response.LoginResponse;
+import com.sku.collaboration.project.domain.auth.mapper.AuthMapper;
+import com.sku.collaboration.project.domain.user.entity.User;
+import com.sku.collaboration.project.domain.user.exception.UserErrorCode;
+import com.sku.collaboration.project.domain.user.repository.UserRepository;
+import com.sku.collaboration.project.global.exception.CustomException;
+import com.sku.collaboration.project.global.jwt.JwtProvider;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

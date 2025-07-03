@@ -1,6 +1,6 @@
-package com.likelion.springpractice.global.exception;
+package com.sku.collaboration.project.global.exception;
 
-import com.likelion.springpractice.global.exception.model.BaseErrorCode;
+import com.sku.collaboration.project.global.exception.model.BaseErrorCode;
 import lombok.Getter;
 
 @Getter

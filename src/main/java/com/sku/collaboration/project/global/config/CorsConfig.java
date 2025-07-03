@@ -1,4 +1,4 @@
-package com.likelion.springpractice.global.config;
+package com.sku.collaboration.project.global.config;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.likelion.springpractice.global.security;
+package com.sku.collaboration.project.global.security;
 
-import com.likelion.springpractice.domain.user.entity.User;
+import com.sku.collaboration.project.domain.user.entity.User;
 import java.util.Collection;
 import java.util.List;
 import lombok.Getter;

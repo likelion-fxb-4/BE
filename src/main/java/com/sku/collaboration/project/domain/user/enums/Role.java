@@ -1,4 +1,4 @@
-package com.likelion.springpractice.domain.user.enums;
+package com.sku.collaboration.project.domain.user.enums;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
