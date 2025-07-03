@@ -62,8 +62,6 @@ public class User extends BaseTimeEntity {
   @Column(name = "refresh_token")
   private String refreshToken;
 
-
-
   public void createRefreshToken(String refreshToken) {
     this.refreshToken = refreshToken;
   }
