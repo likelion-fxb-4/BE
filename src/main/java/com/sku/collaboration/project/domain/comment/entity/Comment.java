@@ -1,8 +1,11 @@
 package com.sku.collaboration.project.domain.comment.entity;
 
+import com.sku.collaboration.project.domain.comment_likes.entity.CommentLike;
 import com.sku.collaboration.project.domain.post.entity.Post;
 import com.sku.collaboration.project.domain.user.entity.User;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.*;
 
 @Entity
@@ -31,4 +34,7 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<CommentLike> likes = new ArrayList<>();
 }
