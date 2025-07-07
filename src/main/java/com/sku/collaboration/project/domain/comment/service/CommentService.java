@@ -37,6 +37,7 @@ public class CommentService {
 
         Comment comment = Comment.builder()
                 .post(post)
+                .user(user)
                 .content(commentRequest.getContent())
                 .is_anonymous(commentRequest.getIsAnonymous())
                 .build();
@@ -47,12 +48,14 @@ public class CommentService {
     }
 
     @Transactional
-    public Boolean deleteComment(Long postId, Long userId) {
+    public Boolean deleteComment(Long commentId, Long userId) {
+
+        Comment comment = commentRepository.findById(commentId).orElseThrow();
         User user = userRepository.findById(userId).orElseThrow();
 
-        Post post = postRepository.findById(postId).orElseThrow();
-
-        commentRepository.deleteByPostId(postId);
+        if(userId.equals(comment.getUser().getId())) {
+            commentRepository.deleteById(commentId);
+        }
 
         return true;
     }
