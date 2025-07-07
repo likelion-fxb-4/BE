@@ -9,6 +9,9 @@ import lombok.Getter;
 @Schema(title = "CommentResponse DTO", description = "댓글 조회에 대한 응답 반환")
 public class CommentResponse {
 
+    @Schema(description = "댓글 ID", example = "1")
+    private Long commentId;
+
     @Schema(description = "게시글 ID", example = "1")
     private Long postId;
 

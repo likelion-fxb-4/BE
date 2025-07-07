@@ -38,12 +38,12 @@ public class CommentController {
     }
 
     @Operation(summary = "댓글 삭제 API", description = "사용자 댓글 삭제를 위한 API")
-    @DeleteMapping("/{postId}")
+    @DeleteMapping("/{commentId}")
     public ResponseEntity<BaseResponse<Boolean>> deleteComment(
-            @PathVariable Long postId,
+            @PathVariable Long commentId,
             @AuthenticationPrincipal CustomUserDetails customUserDetails) {
         Long userId = customUserDetails.getUser().getId();
-        Boolean response = commentService.deleteComment(postId, userId);
+        Boolean response = commentService.deleteComment(commentId, userId);
         return ResponseEntity.ok(BaseResponse.success("댓글 삭제가 완료되었습니다.", response));
     }
 
