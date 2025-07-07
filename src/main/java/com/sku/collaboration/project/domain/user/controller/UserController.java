@@ -1,7 +1,5 @@
 package com.sku.collaboration.project.domain.user.controller;
 
-import com.sku.collaboration.project.domain.user.dto.request.LanguageUpdateRequest;
-import com.sku.collaboration.project.domain.user.dto.request.NameUpdateRequest;
 import com.sku.collaboration.project.domain.user.dto.request.PasswordUpdateRequest;
 import com.sku.collaboration.project.domain.user.dto.request.SignUpRequest;
 import com.sku.collaboration.project.domain.user.dto.response.SignUpResponse;
@@ -44,28 +42,8 @@ public class UserController {
   public ResponseEntity<BaseResponse<Void>> changePassword(
       @AuthenticationPrincipal CustomUserDetails userDetails,
       @RequestBody @Valid PasswordUpdateRequest passwordUpdateRequest) {
-    userService.changePassword(userDetails.getUser().getUserId(), passwordUpdateRequest);
+    userService.changePassword(userDetails.getUser().getId(), passwordUpdateRequest);
     return ResponseEntity.ok(BaseResponse.success("비밀번호가 변경되었습니다.", null));
-  }
-
-  // 언어 변경
-  @Operation(summary = "언어 변경 API", description = "사용자 언어 변경을 위한 API")
-  @PatchMapping("/language")
-  public ResponseEntity<BaseResponse<Void>> changeLanguage(
-      @AuthenticationPrincipal CustomUserDetails userDetails,
-      @RequestBody LanguageUpdateRequest newLanguage) {
-    userService.changeLanguage(userDetails.getUser().getUserId(), newLanguage);
-    return ResponseEntity.ok(BaseResponse.success("언어가 변경되었습니다.", null));
-  }
-
-  // 사용자 이름 변경
-  @Operation(summary = "사용자 이름 변경 API", description = "사용자 이름 변경을 위한 API")
-  @PatchMapping("/name")
-  public ResponseEntity<BaseResponse<Void>> changeName(
-      @AuthenticationPrincipal CustomUserDetails userDetails,
-      @RequestBody @Valid NameUpdateRequest nameUpdateRequest) {
-    userService.changeName(userDetails.getUser().getUserId(), nameUpdateRequest);
-    return ResponseEntity.ok(BaseResponse.success("사용자 이름이 변경되었습니다.", null));
   }
 
 }
