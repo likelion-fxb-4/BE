@@ -1,8 +1,8 @@
-package com.sku.collaboration.project.domain.post.entity;
+package com.sku.collaboration.project.domain.post_like.entity;
 
+import com.sku.collaboration.project.domain.post.entity.Post;
 import com.sku.collaboration.project.domain.user.entity.User;
 import com.sku.collaboration.project.global.common.BaseTimeEntity;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,9 +24,8 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Table(name = "posts")
-public class Post extends BaseTimeEntity {
-
+@Table(name = "post_likes")
+public class PostLike extends BaseTimeEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -35,13 +34,10 @@ public class Post extends BaseTimeEntity {
   @JoinColumn(name = "user_id", nullable = false)
   private User user;
 
-  @Column(nullable = false)
-  private String title;
 
-  @Column(nullable = false)
-  private String content;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "post_id", nullable = false)
+  private Post post;
 
-  @Column(nullable = false)
-  private Boolean isAnonymous;
 
 }
