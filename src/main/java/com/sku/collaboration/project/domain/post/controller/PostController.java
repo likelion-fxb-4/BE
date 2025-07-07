@@ -87,7 +87,7 @@ public class PostController {
       description = "메인 화면에서 비밀게시판 게시글 요약 정보를 조회하는 API")
   @GetMapping("/secret/summary")
   public ResponseEntity<BaseResponse<List<PostSummaryResponse>>> getSecretSummaryPostList() {
-    List<PostSummaryResponse> postSummaryList = postService.getFreeSummaryPostList();
+    List<PostSummaryResponse> postSummaryList = postService.getSecretSummaryPostList();
     return ResponseEntity.ok(BaseResponse.success("게시글 요약 조회 성공", postSummaryList));
   }
 
