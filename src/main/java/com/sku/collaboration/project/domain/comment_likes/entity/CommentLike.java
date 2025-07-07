@@ -28,5 +28,5 @@ public class CommentLike {
 
     @Builder.Default
     @Column
-    private Boolean is_deleted = false;
+    private Boolean isDeleted = false;
 }
