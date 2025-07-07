@@ -26,4 +26,8 @@ public class PostScrap {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
     private Post post;
+
+    @Builder.Default
+    @Column
+    private Boolean is_deleted = false;
 }
