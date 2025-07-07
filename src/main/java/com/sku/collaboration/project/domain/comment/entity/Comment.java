@@ -1,5 +1,7 @@
 package com.sku.collaboration.project.domain.comment.entity;
 
+import com.sku.collaboration.project.domain.post.entity.Post;
+import com.sku.collaboration.project.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,5 +24,11 @@ public class Comment {
     @Column(nullable = false)
     private Boolean is_anonymous;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
