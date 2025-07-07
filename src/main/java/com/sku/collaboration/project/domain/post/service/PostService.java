@@ -87,14 +87,14 @@ public class PostService {
   }
 
   public List<PostListResponse> getFreePostList() {
-    List<Post> postList = postRepository.findAllByPostType(PostType.FREE);
+    List<Post> postList = postRepository.findAllByPostTypeOrderByCreatedAtDesc(PostType.FREE);
     return postList.stream()
         .map(PostMapper::toPostList)
         .toList();
   }
 
   public List<PostListResponse> getSecretPostList() {
-    List<Post> postList = postRepository.findAllByPostType(PostType.SECRET);
+    List<Post> postList = postRepository.findAllByPostTypeOrderByCreatedAtDesc(PostType.SECRET);
     return postList.stream()
         .map(PostMapper::toPostList)
         .toList();
