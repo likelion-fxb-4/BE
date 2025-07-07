@@ -66,6 +66,7 @@ public class CommentController {
             @RequestBody @Valid CommentLikeRequest request,
             @AuthenticationPrincipal CustomUserDetails customUserDetails) {
         Long userId = customUserDetails.getUser().getId();
+        commentLikeService.likeComment(commentId, userId, request);
         return ResponseEntity.ok(BaseResponse.success("댓글 좋아요가 완료되었습니다.", null));
     }
     @Operation(summary = "댓글 좋아요 수 조회 API", description = "특정 댓글의 좋아요 수를 조회하는 API")
