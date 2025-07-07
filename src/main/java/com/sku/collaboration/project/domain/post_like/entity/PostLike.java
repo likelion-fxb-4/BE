@@ -33,5 +33,5 @@ public class PostLike extends BaseTimeEntity {
 
   @Builder.Default
   @Column
-  private Boolean is_deleted = false;
+  private Boolean isDelete = false;
 }

@@ -5,6 +5,9 @@ import com.sku.collaboration.project.domain.post.dto.response.PostDetailResponse
 import com.sku.collaboration.project.domain.post.dto.response.PostListResponse;
 import com.sku.collaboration.project.domain.post.dto.response.PostSummaryResponse;
 import com.sku.collaboration.project.domain.post.service.PostService;
+import com.sku.collaboration.project.domain.post_like.dto.request.PostLikeRequest;
+import com.sku.collaboration.project.domain.post_like.dto.response.PostLikeResponse;
+import com.sku.collaboration.project.domain.post_like.service.PostLikeService;
 import com.sku.collaboration.project.global.response.BaseResponse;
 import com.sku.collaboration.project.global.security.CustomUserDetails;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,6 +37,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PostController {
 
   private final PostService postService;
+  private final PostLikeService postLikeService;
 
   @Operation(
       summary = "게시글 생성",
@@ -131,6 +135,37 @@ public class PostController {
     PostDetailResponse postDetailResponse = postService.getPostDetail(postId);
     return ResponseEntity.ok(BaseResponse.success("게시글 단일 조회 성공", postDetailResponse));
   }
+
+
+  @Operation(
+      summary="게시글 좋아요",
+      description="게시글에 좋아요를 누르는 API"
+  )
+  @PatchMapping("/{postId}/likes")
+  public ResponseEntity<BaseResponse<Void>> likePost(
+      @AuthenticationPrincipal CustomUserDetails userDetails,
+      @Parameter(description = "게시글 ID")
+      @PathVariable Long postId,
+      @RequestBody @Valid PostLikeRequest request) {
+    postLikeService.likePost(userDetails.getUser().getId(), postId, request);
+    return ResponseEntity.ok(BaseResponse.success("게시글 좋아요 성공", null));
+  }
+
+  // 게시글 좋아요 조회
+  @Operation(
+      summary = "게시글 좋아요 조회",
+      description = "게시글에 좋아요를 누른 사용자의 ID 리스트를 조회하는 API"
+  )
+  @GetMapping("/{postId}/likes")
+  public ResponseEntity<BaseResponse<PostLikeResponse>> getPostLikes(
+      @Parameter(description = "게시글 ID")
+      @PathVariable Long postId) {
+    PostLikeResponse response = postLikeService.getPostLikeCount(postId);
+    return ResponseEntity.ok(BaseResponse.success("게시글 좋아요 조회 성공", response));
+  }
+
+
+
 
 
 }
