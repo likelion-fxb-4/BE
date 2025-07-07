@@ -62,6 +62,11 @@ public class PostService {
     postRepository.delete(post);
   }
 
+  @Transactional
+  public List<PostDetailResponse> get() {
+    List<Post> posts = postRepository.findAll();
+    return PostMapper.toPostDetails(posts);
+  }
 
 }
 
