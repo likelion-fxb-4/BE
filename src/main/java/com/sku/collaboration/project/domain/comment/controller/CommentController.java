@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/comments")
 @Tag(name = "Comment", description = "Comment 관리 API")
@@ -36,7 +38,7 @@ public class CommentController {
     }
 
     @Operation(summary = "댓글 삭제 API", description = "사용자 댓글 삭제를 위한 API")
-    @PostMapping("/{postId}")
+    @DeleteMapping("/{postId}")
     public ResponseEntity<BaseResponse<Boolean>> deleteComment(
             @PathVariable Long postId,
             @AuthenticationPrincipal CustomUserDetails customUserDetails) {
@@ -46,7 +48,7 @@ public class CommentController {
     }
 
     @Operation(summary = "특정 게시글 댓글 조회 API", description = "특정 게시글 댓글 조회를 위한 API")
-    @PostMapping("/{postId}")
+    @GetMapping("/{postId}")
     public ResponseEntity<BaseResponse<List<CommentResponse>>> Comment(@PathVariable Long postId) {
         List<CommentResponse> responses = commentService.getComments(postId);
         return ResponseEntity.ok(BaseResponse.success("댓글 조회가 완료되었습니다.", responses));
