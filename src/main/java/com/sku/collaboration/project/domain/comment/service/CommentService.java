@@ -68,7 +68,7 @@ public class CommentService {
     }
 
     private CommentResponse toCommentResponse(Comment comment) {
-        return CommentResponse.builder().postId(comment.getPost().getId()).userId(comment.getUser().getId())
+        return CommentResponse.builder().commentId(comment.getId()).postId(comment.getPost().getId()).userId(comment.getUser().getId())
                 .content(comment.getContent()).isAnonymous(comment.getIs_anonymous()).build();
     }
 
