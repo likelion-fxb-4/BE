@@ -35,7 +35,7 @@ public class CommentLikeService {
 
 
   @Transactional
-  public void  likeComment(Long userId, Long commentId, CommentLikeRequest request) {
+  public void  likeComment(Long commentId, Long userId, CommentLikeRequest request) {
     User user = userRepository.findById(userId)
         .orElseThrow(() -> new CustomException(UserErrorCode.USER_NOT_FOUND));
     Comment comment = commentRepository.findById(commentId)
