@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CommentLikeRepository extends JpaRepository<CommentLike, Long> {
   boolean existsByCommentIdAndUserId(Long commentId, Long userId);
-  int countByCommentAndIsDeleteFalse(Comment comment);
+  int countByCommentAndIsDeletedFalse(Comment comment);
   Optional<CommentLike> findByCommentAndUser(Comment comment, User user);
 }

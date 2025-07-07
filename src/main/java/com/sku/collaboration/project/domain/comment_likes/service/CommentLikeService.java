@@ -67,7 +67,7 @@ public class CommentLikeService {
     Comment comment = commentRepository.findById(commentId)
         .orElseThrow(() -> new CustomException(PostErrorCode.POST_NOT_FOUND));
     return CommentLikeResponse.builder()
-        .likeCount(commentLikeRepository.countByCommentAndIsDeleteFalse(comment))
+        .likeCount(commentLikeRepository.countByCommentAndIsDeletedFalse(comment))
         .build();
   }
 
