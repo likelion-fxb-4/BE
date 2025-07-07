@@ -1,6 +1,5 @@
 package com.sku.collaboration.project.domain.auth.dto.response;
 
-import com.sku.collaboration.project.domain.user.enums.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,8 +18,8 @@ public class LoginResponse {
   @Schema(description = "사용자 이메일", example = "user123@gmail.com")
   private String username;
 
-  @Schema(description = "사용자 권한", example = "USER")
-  private Role role;
+  @Schema(description = "사용자 이름", example = "문재연")
+  private String name;
 
   @Schema(description = "사용자 Access Token 만료 시간", example = "1800000")
   private Long expirationTime;
