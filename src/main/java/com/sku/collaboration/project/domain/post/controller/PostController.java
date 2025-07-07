@@ -109,7 +109,7 @@ public class PostController {
       description = "비밀게시판 게시글 리스트를 조회하는 API")
   @GetMapping("/secret")
   public ResponseEntity<BaseResponse<List<PostListResponse>>> getSecretPostList() {
-    List<PostListResponse> postList = postService.getFreePostList();
+    List<PostListResponse> postList = postService.getSecretPostList();
     return ResponseEntity.ok(BaseResponse.success("게시글 리스트 조회 성공", postList));
   }
 
