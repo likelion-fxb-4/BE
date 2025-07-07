@@ -17,7 +17,7 @@ public class PostMapper {
   public static PostDetailResponse toPostDetail(Post post) {
     return PostDetailResponse.builder()
         .id(post.getId())
-        .author(post.getIsAnonymous() ? post.getUser().getName() : "익명")
+        .author(post.getIsAnonymous() ? "익명" : post.getUser().getName())
         .title(post.getTitle())
         .content(post.getContent())
         .build();
@@ -26,7 +26,7 @@ public class PostMapper {
   public static PostListResponse toPostList(Post post) {
     return PostListResponse.builder()
         .id(post.getId())
-        .author(post.getIsAnonymous() ? post.getUser().getName() : "익명")
+        .author(post.getIsAnonymous() ?  "익명" : post.getUser().getName())
         .title(post.getTitle())
         .summaryContent(post.getContent().length() > 50 ? post.getContent().substring(0, 50) + "..." : post.getContent())
         .build();
