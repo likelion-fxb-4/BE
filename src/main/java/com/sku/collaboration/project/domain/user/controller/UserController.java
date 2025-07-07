@@ -13,11 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -44,6 +40,16 @@ public class UserController {
       @RequestBody @Valid PasswordUpdateRequest passwordUpdateRequest) {
     userService.changePassword(userDetails.getUser().getId(), passwordUpdateRequest);
     return ResponseEntity.ok(BaseResponse.success("비밀번호가 변경되었습니다.", null));
+  }
+
+  @Operation(summary = "사용자 정보 조회 API", description = "사용자 정보 조회를 위한 API")
+  @GetMapping
+  public ResponseEntity<BaseResponse<SignUpResponse>> getUser(
+          @AuthenticationPrincipal CustomUserDetails userDetails) {
+    Long userId = userDetails.getUser().getId();
+    SignUpResponse response = userService.getUser(userId);
+
+    return ResponseEntity.ok(BaseResponse.success("사용자 정보 조회 완료되었습니다.", response));
   }
 
 }

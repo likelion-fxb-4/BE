@@ -48,6 +48,13 @@ public class UserService {
   }
 
   @Transactional
+  public SignUpResponse getUser(Long userId) {
+    User user = userRepository.findById(userId).orElseThrow(() -> new CustomException(UserErrorCode.USER_NOT_FOUND));
+
+    return userMapper.toSignUpResponse(user);
+  }
+
+  @Transactional
   public void changePassword(Long userId, PasswordUpdateRequest passwordUpdateRequest) {
     User user = userRepository.findById(userId)
         .orElseThrow(() -> new CustomException(UserErrorCode.USER_NOT_FOUND));
