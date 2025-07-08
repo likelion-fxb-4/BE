@@ -15,7 +15,6 @@ import com.sku.collaboration.project.domain.user.repository.UserRepository;
 import com.sku.collaboration.project.global.exception.CustomException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -73,14 +72,14 @@ public class PostService {
 
   // Limit 3
   public List<PostSummaryResponse> getFreeSummaryPostList(){
-    List<Post> postList = postRepository.findTop3ByPostTypeOrderByCreatedAtDesc(PostType.FREE);
+    List<Post> postList = postRepository.findTop7ByPostTypeOrderByCreatedAtDesc(PostType.FREE);
     return postList.stream()
         .map(PostMapper::toPostSummary)
         .toList();
   }
 
   public List<PostSummaryResponse> getSecretSummaryPostList(){
-    List<Post> postList = postRepository.findTop3ByPostTypeOrderByCreatedAtDesc(PostType.SECRET);
+    List<Post> postList = postRepository.findTop7ByPostTypeOrderByCreatedAtDesc(PostType.SECRET);
     return postList.stream()
         .map(PostMapper::toPostSummary)
         .toList();
